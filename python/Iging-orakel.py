@@ -91,26 +91,37 @@ def iging_oracle():
     ]
 
     # Zufällige Auswahl eines Bilds
-    picture = random.choice(pictures)
+    picure_idx = random.randint(0,3)
+    picture = pictures[picure_idx]
+    # picture = random.choice(pictures)
 
 
     # Zufällige Auswahl eines Trigramms
-    trigram = random.choice(trigrams)
+    trigram_idx = random.randint(0,7)
+    trigram = trigrams[trigram_idx]
+    # trigram = random.choice(trigrams)
 
 
     # Zufällige Auswahl eines Hexagramms
-    hexagram = random.choice(hexagrams)
+    hexagram_idx1 = random.randint(0,63)
+    hexagram1 = hexagrams[hexagram_idx1]
+
+    hexagram_idx2 = random.randint(0,63)
+    hexagram2 = hexagrams[hexagram_idx2]
+    # hexagram = random.choice(hexagrams)
 
 
     # Ausgabe der Trigramme und des Hexagramms als Unicode-Zeichen
     print("Dein Bild ist: ")
-    print(picture[0], picture[1])
+    print(picure_idx, picture[0], picture[1])
     print("\n")
     print("Dein Trigramm ist: ")
-    print(trigram[0], trigram[1])
+    print(trigram_idx, trigram[0], trigram[1])
     print("\n")
-    print("Dein Hexagramm ist: ")
-    print(hexagram[0], hexagram[1])
+    print("Dein 1. Hexagramm ist: ")
+    print(hexagram_idx1, hexagram1[0], hexagram1[1])
+    print("Dein 2. Hexagramm ist: ")
+    print(hexagram_idx2, hexagram2[0], hexagram2[1])
 
 
 
