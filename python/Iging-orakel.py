@@ -1,8 +1,9 @@
 ﻿import random
-inport openai
+import openai
+import textwrap
 import config
 
-openai.my_api_key = config.OPENAI_APIKEY
+openai.api_key = config.OPENAI_APIKEY
 
 # Liste der Bilder mit Unicode-Zeichen
 pictures = [
@@ -132,22 +133,29 @@ def iging_oracle():
     print(hexagram_idx2, hexagram2[0], hexagram2[1])
 
     # ask chatgpt for the interpretation of the hexagrams to the specific question
-    print("Die Interpretation von ChatGPT:")
+    print("\nDie Interpretation von ChatGPT:")
+    chat = "Wie ist die Antwort Hexagramm " + str(hexagram_idx1) + " und " + str(hexagram_idx2) + " des I Ging Orakels auf die Frage '" + question + "' zu interpretieren?"
+    wrapper = textwrap.TextWrapper(width=70, replace_whitespace=False)
+    string = wrapper.fill(text=chat)
+    print (string + "\n")   
+
     # TODO: ask ChatGpt and print th resault 
-    messages = [ {"role": "system", "content": 
-              "Wie ist die Anwort des I Ging Orakel Hexagramm " + hexagram_idx1 + " und " + hexagram_idx2 + " auf die Frage '" + question + "' zu interpretieren?"} ]
-    while True:
-        message = input("User : ")
-        if message:
-            messages.append(
-                {"role": "user", "content": message},
-            )
-            chat = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo", messages=messages
-            )
-        reply = chat.choices[0].message.content
-        print(f"ChatGPT: {reply}")
-        messages.append({"role": "assistant", "content": reply})    
+    messages = [ {"role": "user", "content": 
+              "Wie ist die Antwort des I Ging Orakel Hexagramm " + str(hexagram_idx1) + " und " + str(hexagram_idx2) + " auf die Frage '" + question + "' zu interpretieren?"} ]
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": chat}],
+        temperature=1,
+        max_tokens=641,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+    )
+    reply = response.choices[0].message.content
+    wrapper = textwrap.TextWrapper(width=70, replace_whitespace=False)
+    string = wrapper.fill(text=reply)
+    print (string)   
 
 # Aufruf der Funktion
 iging_oracle()
