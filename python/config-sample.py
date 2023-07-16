@@ -1,0 +1,1 @@
+OPENAI_APIKEY="<enter your chatgpt api-key here>"
