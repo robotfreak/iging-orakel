@@ -1,9 +1,10 @@
 ﻿import random
 import openai
 import textwrap
-import config
+import os
+import sys
 
-openai.api_key = config.OPENAI_APIKEY
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # Liste der Bilder mit Unicode-Zeichen
 pictures = [
@@ -119,7 +120,10 @@ def randomPicture():
 def iging_oracle():
 
     # read string from user
-    question = input('> Enter your Question: ')
+    print("> Gib deine Frage ein: ")
+    res = sys.stdin.readline()  # used in place of input()
+    question = res.strip()
+    #question = input('> Enter your Question: ')
     print(question)
 
     # generate the i ging hexagrams
