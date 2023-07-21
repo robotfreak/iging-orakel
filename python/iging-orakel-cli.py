@@ -29,69 +29,69 @@ trigrams = [
 
 # Liste der Hexagramme mit Unicode-Zeichen
 hexagrams = [
-    ("䷀", "Ch'ien - Das Schöpferische"),                   # 1
-    ("䷁", "K'un - Das Empfangende"),                       # 2
-    ("䷂", "Chun - Das Anregende"),                         # 3
-    ("䷃", "Mêng - Die Jugendtorheit"),                     # 4
-    ("䷄", "Hsü - Das Warten"),                             # 5
-    ("䷅", "Sung - Der Streit"),                            # 6
-    ("䷆", "Shih - Das Heer"),                              # 7
-    ("䷇", "Pi - Das Zusammenhalten"),                      # 8
-    ("䷈", "Hsiao Ch'u - Das kleine Übergewicht"),          # 9
-    ("䷉", "Lü - Das Verhalten"),                           # 10
-    ("䷊", "T'ai - Der Friede"),                            # 11
-    ("䷋", "P'i - Das Hindernis"),                          # 12
-    ("䷌", "T'ung Jên - Die Gemeinschaft mit Menschen"),    # 13
-    ("䷍", "Ta Yu - Das Große Übergewicht"),                # 14
-    ("䷎", "Ch'ien - Die Bescheidenheit"),                  # 15
-    ("䷏", "Yü - Das Begeisternde"),                        # 16
-    ("䷐", "Sui - Das Nachfolgende"),                       # 17
-    ("䷑", "Ku - Das Verderben"),                           # 18
-    ("䷒", "Lin - Der Annähernde"),                         # 19
-    ("䷓", "Huan - Das Betrachtende"),                      # 20
-    ("䷔", "Shih Ho - Das Beißen"),                         # 21
-    ("䷕", "Pi - Die Menge"),                               # 22
-    ("䷖", "Po - Das Abscheuliche"),                        # 23
-    ("䷗", "Po - Das Zurückschreckende"),                   # 24
-    ("䷘", "Fu - Die Wiederkehr"),                          # 25    
-    ("䷙", "Wu Wang - Das Unschuldige"),                    # 25 --
-    ("䷚", "Ta Ch'u - Das Große Übergewicht"),              # 26
-    ("䷛", "I - Das Nährende"),                             # 27
-    ("䷜", "Ta Kuo - Das Übergewicht des Großen"),          # 28
-    ("䷝", "K'an - Das Abgründige"),                        # 29
-    ("䷞", "Li - Das Leitende"),                            # 30  
-    ("䷟", "Hsien - Das Reifen"),                           # 31
-    ("䷠", "Hêng - Der Einfluss"),                          # 32
-    ("䷡", "Tun - Der Rückgang"),                           # 33
-    ("䷢", "Ta Chuang - Das Übergewicht des Großen"),       # 34
-    ("䷣", "Chin - Das Hemmende"),                          # 35
-    ("䷤", "Mêng - Die Verwirrung"),                        # 36
-    ("䷥", "K'uei - Das Abziehende"),                       # 37
-    ("䷦", "Chien - Die Erschöpfung"),                      # 38
-    ("䷧", "Hsiao Kuo - Das kleine Übergewicht"),           # 39
-    ("䷨", "Ku - Die Befreiung"),                           # 40
-    ("䷩", "Chia Jên - Die Verbindung mit Menschen"),       # 41
-    ("䷪", "Kuei Mei - Das Sammeln"),                       # 42
-    ("䷫", "Fêng - Das Erregende"),                         # 43
-    ("䷬", "Lü - Das Karge"),                               # 44
-    ("䷭", "Ting - Der Ruin"),                              # 45
-    ("䷮", "Chien - Das Verdrängte"),                       # 46
-    ("䷯", "Hsiao Ch'u - Das Kreative"),                    # 47
-    ("䷰", "Hêng - Das Beharrliche"),                       # 48          
-    ("䷱", "Chung Fu - Die Innere Wahrheit"),               # 49   
-    ("䷲", "Hsiao Kuo - Das Kühne"),                        # 50
-    ("䷳", "Chia Jên - Das Einengende"),                    # 51
-    ("䷴", "Kuei Mei - Die Beharrlichkeit"),                # 52
-    ("䷵", "Fêng - Die Entwicklung"),                       # 53
-    ("䷶", "Lü - Die Erschöpfung"),                         # 54
-    ("䷷", "Ting - Der Übergang"),                          # 55
-    ("䷸", "Chien - Die Sorge"),                            # 56
-    ("䷹", "Chun - Die Lösen"),                             # 57
-    ("䷺", "Hsiao Kuo - Das Halten"),                       # 58
-    ("䷻", "Ku - Die Geistesgegenwart"),                    # 59
-    ("䷼", "Hsü - Die Hemmung"),                            # 60
-    ("䷽", "Chien - Die Unmäßigkeit"),                      # 61
-    ("䷾", "Sun - Die Innigkeit"),                           # 62
+    ("䷀", "Ch'ien - Das Schöpferische"),
+    ("䷁", "K'un - Das Empfangende"),
+    ("䷂", "Chun - Die Anfangsschwierigkeit"),
+    ("䷃", "Mêng - Die Jugendtorheit"),
+    ("䷄", "Hsü - Das Warten"),
+    ("䷅", "Sung - Der Streit"),
+    ("䷆", "Shih - Das Heer"),
+    ("䷇", "Pi - Das Zusammenhalten"),
+    ("䷈", "Hsiao Ch'u - Des Kleinen Zähmungskraft"),
+    ("䷉", "Lü - Das Auftreten"),
+    ("䷊", "T'ai - Der Friede"),
+    ("䷋", "P'i - Die Stockung"),
+    ("䷌", "T'ung Jên - Die Gemeinschaft mit Menschen"),
+    ("䷍", "Ta Yu - Der Besitz von Großem"),
+    ("䷎", "Ch'ien - Die Bescheidenheit"),
+    ("䷏", "Yü - Die Begeisterung"),
+    ("䷐", "Sui - Die Nachfolge"),
+    ("䷑", "Ku - Die Arbeit am Verdorbenen"),
+    ("䷒", "Lin - Die Annäherung"),
+    ("䷓", "Huan - Die Betrachteung"),
+    ("䷔", "Shih Ho - Das Durchbeißen"),
+    ("䷕", "Pi - Die Anmut"),
+    ("䷖", "Po - Die Zersplitterung"),
+    ("䷗", "Fu - Die Wendezeit"),
+    ("䷘", "Wu Wang - Die Unschuld"),
+    ("䷙", "Ta Ch'u - Des Großen Zähmungskraf"),
+    ("䷚", "I - Die Ernährung"),
+    ("䷛", "Ta Kuo - Des Großen Übergewicht"),
+    ("䷜", "K'an - Das Abgründige"),
+    ("䷝", "Li - Das Feuer"),
+    ("䷞", "Hsien - Die Einwirkung"),
+    ("䷟", "Hêng - Die Dauer"),
+    ("䷠", "Tun - Der Rückzug"),
+    ("䷡", "Ta Chuang - Des Großen Macht"),
+    ("䷢", "Chin - Der Fortschritt"),
+    ("䷣", "Ming I - Die Verfinsterung des Lichts"),
+    ("䷤", "Jia Ren - Die Sippe"),
+    ("䷥", "K'uei - Der Gegensatz"),
+    ("䷦", "Jian - Das Hemmnis"),
+    ("䷧", "Xie - Die Befreiung"),
+    ("䷨", "Sun - Die Minderung"),
+    ("䷩", "Yi - Die Mehrung"),
+    ("䷪", "Kuei - Der Durchbruch"),
+    ("䷫", "Gou - Das Entgegenkommen"),
+    ("䷬", "Cui - Die Sammlung"),
+    ("䷭", "Sheng - Das Empordringen"),
+    ("䷮", "Kun - Die Bedrängnis"),
+    ("䷯", "Jing - Der Brunnen"),
+    ("䷰", "Ge - Die Umwälzung"),
+    ("䷱", "Ding - Der Tiegel"),
+    ("䷲", "Zhen - Das Erregende"),
+    ("䷳", "Gen - Das Stillehalten"),
+    ("䷴", "Jian - Die Entwicklung"),
+    ("䷵", "Gui Mei - Das heiratende Mädchen"),
+    ("䷶", "Feng - Die Fülle"),
+    ("䷷", "Lu - Der Wanderer"),
+    ("䷸", "Xun - Das Sanfte"),
+    ("䷹", "Dui - Das Heitere"),
+    ("䷺", "Huan - Die Auflösung"),
+    ("䷻", "Jie - Die Beschränkung"),
+    ("䷼", "Zhong Fu - Innere Wahrheit"),
+    ("䷽", "Xiao Guo - Des Kleinen Übergewicht"),
+    ("䷾", "Ji Ji - Nach der Vollendung"),
     ("䷿", "Wei Ji - Vor der Vollendung")                           # 62
 ]
 
