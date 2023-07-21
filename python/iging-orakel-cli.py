@@ -29,69 +29,70 @@ trigrams = [
 
 # Liste der Hexagramme mit Unicode-Zeichen
 hexagrams = [
-    ("䷀", "Ch'ien - Das Schöpferische"),
-    ("䷁", "K'un - Das Empfangende"),
-    ("䷂", "Chun - Das Anregende"),
-    ("䷃", "Mêng - Die Jugendtorheit"),
-    ("䷄", "Hsü - Das Warten"),
-    ("䷅", "Sung - Der Streit"),
-    ("䷆", "Shih - Das Heer"),
-    ("䷇", "Pi - Das Zusammenhalten"),
-    ("䷈", "Hsiao Ch'u - Das kleine Übergewicht"),
-    ("䷉", "Lü - Das Verhalten"),
-    ("䷊", "T'ai - Der Friede"),
-    ("䷋", "P'i - Das Hindernis"),
-    ("䷌", "T'ung Jên - Die Gemeinschaft mit Menschen"),
-    ("䷍", "Ta Yu - Das Große Übergewicht"),
-    ("䷎", "Ch'ien - Die Bescheidenheit"),
-    ("䷏", "Yü - Das Begeisternde"),
-    ("䷐", "Sui - Das Nachfolgende"),
-    ("䷑", "Ku - Das Verderben"),
-    ("䷒", "Lin - Der Annähernde"),
-    ("䷓", "Huan - Das Betrachtende"),
-    ("䷔", "Shih Ho - Das Beißen"),
-    ("䷕", "Pi - Die Menge"),
-    ("䷖", "Po - Das Abscheuliche"),
-    ("䷗", "Po - Das Zurückschreckende"),
-    ("䷘", "Fu - Die Wiederkehr"),
-    ("䷙", "Wu Wang - Das Unschuldige"),
-    ("䷚", "Ta Ch'u - Das Große Übergewicht"),
-    ("䷛", "I - Das Nährende"),
-    ("䷜", "Ta Kuo - Das Übergewicht des Großen"),
-    ("䷝", "K'an - Das Abgründige"),
-    ("䷞", "Li - Das Leitende"),
-    ("䷟", "Hsien - Das Reifen"),
-    ("䷠", "Hêng - Der Einfluss"),
-    ("䷡", "Tun - Der Rückgang"),
-    ("䷢", "Ta Chuang - Das Übergewicht des Großen"),
-    ("䷣", "Chin - Das Hemmende"),
-    ("䷤", "Mêng - Die Verwirrung"),
-    ("䷥", "K'uei - Das Abziehende"),
-    ("䷦", "Chien - Die Erschöpfung"),
-    ("䷧", "Hsiao Kuo - Das kleine Übergewicht"),
-    ("䷨", "Ku - Die Befreiung"),
-    ("䷩", "Chia Jên - Die Verbindung mit Menschen"),
-    ("䷪", "Kuei Mei - Das Sammeln"),
-    ("䷫", "Fêng - Das Erregende"),
-    ("䷬", "Lü - Das Karge"),
-    ("䷭", "Ting - Der Ruin"),
-    ("䷮", "Chien - Das Verdrängte"),
-    ("䷯", "Hsiao Ch'u - Das Kreative"),
-    ("䷰", "Hêng - Das Beharrliche"),
-    ("䷱", "Chung Fu - Die Innere Wahrheit"),
-    ("䷲", "Hsiao Kuo - Das Kühne"),
-    ("䷳", "Chia Jên - Das Einengende"),
-    ("䷴", "Kuei Mei - Die Beharrlichkeit"),
-    ("䷵", "Fêng - Die Entwickelung"),
-    ("䷶", "Lü - Die Erschöpfung"),
-    ("䷷", "Ting - Der Übergang"),
-    ("䷸", "Chien - Die Sorge"),
-    ("䷹", "Chun - Die Lösen"),
-    ("䷺", "Hsiao Kuo - Das Halten"),
-    ("䷻", "Ku - Die Geistesgegenwart"),
-    ("䷼", "Hsü - Die Hemmung"),
-    ("䷽", "Chien - Die Unmäßigkeit"),
-    ("䷾", "Sun - Die Innigkeit")
+    ("䷀", "Ch'ien - Das Schöpferische"),                   # 1
+    ("䷁", "K'un - Das Empfangende"),                       # 2
+    ("䷂", "Chun - Das Anregende"),                         # 3
+    ("䷃", "Mêng - Die Jugendtorheit"),                     # 4
+    ("䷄", "Hsü - Das Warten"),                             # 5
+    ("䷅", "Sung - Der Streit"),                            # 6
+    ("䷆", "Shih - Das Heer"),                              # 7
+    ("䷇", "Pi - Das Zusammenhalten"),                      # 8
+    ("䷈", "Hsiao Ch'u - Das kleine Übergewicht"),          # 9
+    ("䷉", "Lü - Das Verhalten"),                           # 10
+    ("䷊", "T'ai - Der Friede"),                            # 11
+    ("䷋", "P'i - Das Hindernis"),                          # 12
+    ("䷌", "T'ung Jên - Die Gemeinschaft mit Menschen"),    # 13
+    ("䷍", "Ta Yu - Das Große Übergewicht"),                # 14
+    ("䷎", "Ch'ien - Die Bescheidenheit"),                  # 15
+    ("䷏", "Yü - Das Begeisternde"),                        # 16
+    ("䷐", "Sui - Das Nachfolgende"),                       # 17
+    ("䷑", "Ku - Das Verderben"),                           # 18
+    ("䷒", "Lin - Der Annähernde"),                         # 19
+    ("䷓", "Huan - Das Betrachtende"),                      # 20
+    ("䷔", "Shih Ho - Das Beißen"),                         # 21
+    ("䷕", "Pi - Die Menge"),                               # 22
+    ("䷖", "Po - Das Abscheuliche"),                        # 23
+    ("䷗", "Po - Das Zurückschreckende"),                   # 24
+    ("䷘", "Fu - Die Wiederkehr"),                          # 25    
+    ("䷙", "Wu Wang - Das Unschuldige"),                    # 25 --
+    ("䷚", "Ta Ch'u - Das Große Übergewicht"),              # 26
+    ("䷛", "I - Das Nährende"),                             # 27
+    ("䷜", "Ta Kuo - Das Übergewicht des Großen"),          # 28
+    ("䷝", "K'an - Das Abgründige"),                        # 29
+    ("䷞", "Li - Das Leitende"),                            # 30  
+    ("䷟", "Hsien - Das Reifen"),                           # 31
+    ("䷠", "Hêng - Der Einfluss"),                          # 32
+    ("䷡", "Tun - Der Rückgang"),                           # 33
+    ("䷢", "Ta Chuang - Das Übergewicht des Großen"),       # 34
+    ("䷣", "Chin - Das Hemmende"),                          # 35
+    ("䷤", "Mêng - Die Verwirrung"),                        # 36
+    ("䷥", "K'uei - Das Abziehende"),                       # 37
+    ("䷦", "Chien - Die Erschöpfung"),                      # 38
+    ("䷧", "Hsiao Kuo - Das kleine Übergewicht"),           # 39
+    ("䷨", "Ku - Die Befreiung"),                           # 40
+    ("䷩", "Chia Jên - Die Verbindung mit Menschen"),       # 41
+    ("䷪", "Kuei Mei - Das Sammeln"),                       # 42
+    ("䷫", "Fêng - Das Erregende"),                         # 43
+    ("䷬", "Lü - Das Karge"),                               # 44
+    ("䷭", "Ting - Der Ruin"),                              # 45
+    ("䷮", "Chien - Das Verdrängte"),                       # 46
+    ("䷯", "Hsiao Ch'u - Das Kreative"),                    # 47
+    ("䷰", "Hêng - Das Beharrliche"),                       # 48          
+    ("䷱", "Chung Fu - Die Innere Wahrheit"),               # 49   
+    ("䷲", "Hsiao Kuo - Das Kühne"),                        # 50
+    ("䷳", "Chia Jên - Das Einengende"),                    # 51
+    ("䷴", "Kuei Mei - Die Beharrlichkeit"),                # 52
+    ("䷵", "Fêng - Die Entwicklung"),                       # 53
+    ("䷶", "Lü - Die Erschöpfung"),                         # 54
+    ("䷷", "Ting - Der Übergang"),                          # 55
+    ("䷸", "Chien - Die Sorge"),                            # 56
+    ("䷹", "Chun - Die Lösen"),                             # 57
+    ("䷺", "Hsiao Kuo - Das Halten"),                       # 58
+    ("䷻", "Ku - Die Geistesgegenwart"),                    # 59
+    ("䷼", "Hsü - Die Hemmung"),                            # 60
+    ("䷽", "Chien - Die Unmäßigkeit"),                      # 61
+    ("䷾", "Sun - Die Innigkeit"),                           # 62
+    ("䷿", "Wei Ji - Vor der Vollendung")                           # 62
 ]
 
 
