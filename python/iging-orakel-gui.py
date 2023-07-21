@@ -226,6 +226,13 @@ def main():
             answer = wrapper.fill(text=reply)
             print (answer)   
             window['ANSWER'].update(value=answer)
+        elif event in ('Cancel'):
+            answer=""
+            window['ANSWER'].update(value=answer)
+            window['OUTPUT1'].update(value=answer)
+            window['OUTPUT2'].update(value=answer)
+            window['REMARK1'].update(value=answer)
+            window['REMARK2'].update(value=answer)
 
 
     window.close()
