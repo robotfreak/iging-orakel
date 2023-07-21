@@ -167,19 +167,20 @@ def main():
     input_width=80
     hexagram1 = []
     hexagram2 = []
+    defaultFont = 'Default 18'
 
     sg.theme('DarkAmber')
 
     layout = [[sg.Text('Stelle deine Frage an das Orakel und drücke \'Start\':')],
-              [sg.InputText(size=(input_width, 1), enable_events=True, key='-IN-')],
+              [sg.InputText(size=(input_width, 1), font='Default 18', enable_events=True, key='-IN-')],
               [sg.Text('Die Anwort des \'I Ging\' Orakels:')],
-              [sg.Text('1. Hexagramm:', size=(40,1)), sg.Text('2. Hexagramm:', size=(40,1))],
-              [sg.Text("", size=(6, 1), font='Default 78', key='OUTPUT1'),
-               sg.Text("", size=(6, 1), font='Default 78', key='OUTPUT2')],
-              [sg.Text("", size=(40,1), key='REMARK1'), sg.Text("", size=(40,1), key='REMARK2')],
+              [sg.Text('1. Hexagramm:', size=(50,1)), sg.Text('2. Hexagramm:', size=(50,1))],
+              [sg.Text("", size=(6, 1), font='Default 96', key='OUTPUT1'),
+               sg.Text("", size=(6, 1), font='Default 96', key='OUTPUT2')],
+              [sg.Text("", size=(50,1), key='REMARK1'), sg.Text("", size=(50,1), key='REMARK2')],
               [sg.Button('Start')],
               [sg.Text('Drücke \'Submit\' für eine Interpretation von ChatGPT:')],
-              [sg.Multiline("", size=(80,30), key='ANSWER')],
+              [sg.Multiline("", size=(80,20), font='Default 18', key='ANSWER')],
               [sg.Submit(), sg.Cancel()]]
 
     window = sg.Window('ChatGPT \'I Ging\' Orakel', layout)
