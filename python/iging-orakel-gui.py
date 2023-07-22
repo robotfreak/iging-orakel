@@ -4,8 +4,15 @@ import textwrap
 import os
 import sys
 import PySimpleGUI as sg
+from PIL import Image, ImageTk
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
+
+filename = "pakua.png"
+# Resize PNG file to size (100, 100)
+size = (150, 150)
+im = Image.open(filename)
+im = im.resize(size, resample=Image.BICUBIC)
 
 # Liste der Bilder mit Unicode-Zeichen
 pictures = [
@@ -119,7 +126,7 @@ def randomPicture():
     return picure_idx, picture
 
 
-def iging_oracle():
+def iging_oracle_cli():
 
     # read string from user
     print("> Gib deine Frage ein: ")
@@ -163,27 +170,32 @@ def iging_oracle():
     string = wrapper.fill(text=reply)
     print (string)   
 
-def main():
+def iging_oracle_gui():
     input_width=80
     hexagram1 = []
     hexagram2 = []
-    defaultFont = 'Default 18'
 
     sg.theme('DarkAmber')
 
-    layout = [[sg.Text('Stelle deine Frage an das Orakel und drücke \'Start\':')],
+    layout = [[sg.Text('Stelle deine Frage an das Orakel und drücke \'Orakel\' Button:')],
               [sg.InputText(size=(input_width, 1), font='Default 18', enable_events=True, key='-IN-')],
               [sg.Text('Die Anwort des \'I Ging\' Orakels:')],
               [sg.Text('1. Hexagramm:', size=(50,1)), sg.Text('2. Hexagramm:', size=(50,1))],
               [sg.Text("", size=(6, 1), font='Default 96', key='OUTPUT1'),
-               sg.Text("", size=(6, 1), font='Default 96', key='OUTPUT2')],
+               sg.Text("", size=(4, 1), font='Default 96', key='OUTPUT2'),
+               sg.Image(size=(150,150), key='-IMAGE-')],
               [sg.Text("", size=(50,1), key='REMARK1'), sg.Text("", size=(50,1), key='REMARK2')],
-              [sg.Button('Start')],
-              [sg.Text('Drücke \'Submit\' für eine Interpretation von ChatGPT:')],
-              [sg.Multiline("", size=(80,20), font='Default 18', key='ANSWER')],
-              [sg.Submit(), sg.Cancel()]]
+              [sg.Button('Orakel')],
+              [sg.Text('Für eine Deutung durch ChatGPT drücke den \'ChatGPT\' Button:')],
+              [sg.Multiline("", size=(80,15), font='Default 18', key='ANSWER')],
+              [sg.Button('ChatGPT'), sg.Button('Neu')]]
 
-    window = sg.Window('ChatGPT \'I Ging\' Orakel', layout)
+    window = sg.Window('ChatGPT \'I Ging\' Orakel', layout, finalize=True)
+    # Convert im to ImageTk.PhotoImage after window finalized
+    image = ImageTk.PhotoImage(image=im)
+
+    # update image in sg.Image
+    window['-IMAGE-'].update(data=image)
 
     while True:  # Event Loop
         event, values = window.read()
@@ -191,43 +203,44 @@ def main():
             break
         elif event == '-IN-':
             question = values['-IN-'] 
-        elif event in ('Start'):
+        elif event in ('Orakel'):
             # generate the i ging hexagrams
-            print(question)
-            [hexagram_idx1, hexagram1] = randomHexagram() 
-            [hexagram_idx2, hexagram2] = randomHexagram() 
-            print(hexagram_idx1+1, hexagram1[0], hexagram1[1])
-            print(hexagram_idx2+1, hexagram2[0], hexagram2[1])
-            window['OUTPUT1'].update(value=hexagram1[0])
-            window['OUTPUT2'].update(value=hexagram2[0])
-            window['REMARK1'].update(value=hexagram1[1])
-            window['REMARK2'].update(value=hexagram2[1])
-        elif event in ('Submit'):
-            chat = "Wie ist die Antwort Hexagramm " + str(hexagram_idx1+1) + " und " + str(hexagram_idx2+1) + " des I Ging Orakels auf die Frage '" + question + "' zu interpretieren?"
-            wrapper = textwrap.TextWrapper(width=70, replace_whitespace=False)
-            string = wrapper.fill(text=chat)
-            print (string + "\n")   
+            if (question != ""):
+                print(question)
+                [hexagram_idx1, hexagram1] = randomHexagram() 
+                [hexagram_idx2, hexagram2] = randomHexagram() 
+                print(hexagram_idx1+1, hexagram1[0], hexagram1[1])
+                print(hexagram_idx2+1, hexagram2[0], hexagram2[1])
+                window['OUTPUT1'].update(value=hexagram1[0])
+                window['OUTPUT2'].update(value=hexagram2[0])
+                window['REMARK1'].update(value=hexagram1[1])
+                window['REMARK2'].update(value=hexagram2[1])
+        elif event in ('ChatGPT'):
+            if (question != ""):
+                chat = "Wie ist die Antwort Hexagramm " + str(hexagram_idx1+1) + " und " + str(hexagram_idx2+1) + " des I Ging Orakels auf die Frage '" + question + "' zu interpretieren?"
+                wrapper = textwrap.TextWrapper(width=70, replace_whitespace=False)
+                string = wrapper.fill(text=chat)
+                print (string + "\n")   
 
-            # ask ChatGpt and print th resault 
-            messages = [ {"role": "user", "content": 
-              "Wie ist die Antwort des I Ging Orakel Hexagramm " + str(hexagram_idx1) + " und " + str(hexagram_idx2) + " auf die Frage '" + question + "' zu interpretieren?"} ]
-    
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "user", "content": chat}],
-                temperature=1,
-                max_tokens=641,
-                top_p=1,
-                frequency_penalty=0,
-                presence_penalty=0
-            )
-            reply = response.choices[0].message.content
-            wrapper = textwrap.TextWrapper(width=70, replace_whitespace=False)
-            answer = wrapper.fill(text=reply)
-            print (answer)   
-            window['ANSWER'].update(value=answer)
-        elif event in ('Cancel'):
-            answer=""
+                # ask ChatGpt and print th resault 
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[{"role": "user", "content": chat}],
+                    temperature=1,
+                    max_tokens=641,
+                    top_p=1,
+                    frequency_penalty=0,
+                    presence_penalty=0
+                )
+                reply = response.choices[0].message.content
+                wrapper = textwrap.TextWrapper(width=70, replace_whitespace=False)
+                answer = wrapper.fill(text=reply)
+                print (answer)   
+                window['ANSWER'].update(value=answer)
+        elif event in ('Neu'):
+            question = ""
+            answer = ""
+            window['-IN-'].update(value=answer)
             window['ANSWER'].update(value=answer)
             window['OUTPUT1'].update(value=answer)
             window['OUTPUT2'].update(value=answer)
@@ -238,5 +251,5 @@ def main():
     window.close()
 
 # Aufruf der Funktion
-main()
-#iging_oracle()
+iging_oracle_gui()
+#iging_oracle_cli()
