@@ -177,18 +177,19 @@ def iging_oracle_gui():
 
     sg.theme('DarkAmber')
 
-    layout = [[sg.Text('Stelle deine Frage an das Orakel und drücke \'Orakel\' Button:')],
+    layout = [[sg.Text('Stelle deine Frage an das Orakel und drücke danach den \'Orakel\' Button:')],
               [sg.InputText(size=(input_width, 1), font='Default 18', enable_events=True, key='-IN-')],
+              [sg.Button('Orakel')],
               [sg.Text('Die Anwort des \'I Ging\' Orakels:')],
               [sg.Text('1. Hexagramm:', size=(50,1)), sg.Text('2. Hexagramm:', size=(50,1))],
               [sg.Text("", size=(6, 1), font='Default 96', key='OUTPUT1'),
                sg.Text("", size=(4, 1), font='Default 96', key='OUTPUT2'),
                sg.Image(size=(150,150), key='-IMAGE-')],
               [sg.Text("", size=(50,1), key='REMARK1'), sg.Text("", size=(50,1), key='REMARK2')],
-              [sg.Button('Orakel')],
               [sg.Text('Für eine Deutung durch ChatGPT drücke den \'ChatGPT\' Button:')],
-              [sg.Multiline("", size=(80,15), font='Default 18', key='ANSWER')],
-              [sg.Button('ChatGPT'), sg.Button('Neu')]]
+              [sg.Button('ChatGPT')],
+              [sg.Multiline("", size=(120,28), font='Default 18', key='ANSWER')],
+              [sg.Button('Neu')]]
 
     window = sg.Window('ChatGPT \'I Ging\' Orakel', layout, finalize=True)
     # Convert im to ImageTk.PhotoImage after window finalized
